@@ -44,7 +44,7 @@ class PredictionResponse(BaseModel):
 
 @app.get('/')
 def greet():
-    return {'Jarjish is a good boy'}
+    return {'message': 'Welcome to Mental Score Predictor'}
 
 top_countries = ['Other','India','USA','Canada','Australia','UK','Germany','Mexico','Turkey','France']
 
