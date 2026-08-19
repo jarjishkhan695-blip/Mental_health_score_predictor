@@ -3,7 +3,7 @@
 /* ==========================================================================
    Config
    ========================================================================== */
-const API_URL = 'http://127.0.0.1:2200/predict';
+const API_URL = 'https://mental-health-score-predictor-1-uma2.onrender.com/predict';
 const GAUGE_CIRCUMFERENCE = 2 * Math.PI * 94; // r=94, matches SVG
 const MAX_SCORE_FOR_GAUGE = 100; // score assumed on a 0–100 scale for the visual ring
 
