@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>MentalCare AI — Understand Your Digital Lifestyle</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<!-- ============ NAVBAR ============ -->
+<header class="navbar" id="navbar">
+  <div class="navbar__inner">
+    <a href="#top" class="navbar__brand">
+      <span class="navbar__mark" aria-hidden="true">
+        <svg viewBox="0 0 32 32" width="22" height="22" fill="none">
+          <path d="M4 17c2.5 0 2.5-6 5-6s2.5 10 5 10 2.5-14 5-14 2.5 10 5 10h4" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </span>
+      MentalCare <span class="navbar__ai">AI</span>
+    </a>
+
+    <nav class="navbar__links" id="navLinks">
+      <a href="#top" class="navbar__link">Home</a>
+      <a href="#assessment" class="navbar__link">Assessment</a>
+      <a href="#about" class="navbar__link">About</a>
+    </nav>
+
+    <button class="navbar__toggle" id="navToggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="navLinks">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- ============ HERO ============ -->
+  <section class="hero">
+    <div class="hero__glow" aria-hidden="true"></div>
+    <div class="hero__inner">
+      <div class="hero__content">
+        <p class="hero__eyebrow">Predictive wellness, powered by machine learning</p>
+        <h1 class="hero__heading">Understand Your <span>Digital Lifestyle</span></h1>
+        <p class="hero__sub">Discover how your daily digital habits, sleep, activity, study routine and stress levels contribute to your predicted mental health score.</p>
+        <div class="hero__actions">
+          <button class="btn btn--primary" id="startAssessmentBtn">
+            Start Assessment
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+        </div>
+      </div>
+
+      <div class="hero__visual" aria-hidden="true">
+        <svg class="pulse-signal" viewBox="0 0 420 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="pulseGrad" x1="0" y1="0" x2="420" y2="0" gradientUnits="userSpaceOnUse">
+              <stop offset="0" stop-color="var(--teal-400)"/>
+              <stop offset="0.55" stop-color="var(--teal-600)"/>
+              <stop offset="1" stop-color="var(--ink-700)"/>
+            </linearGradient>
+            <radialGradient id="ringGlow" cx="0.5" cy="0.5" r="0.5">
+              <stop offset="0%" stop-color="var(--teal-300)" stop-opacity="0.35"/>
+              <stop offset="100%" stop-color="var(--teal-300)" stop-opacity="0"/>
+            </radialGradient>
+          </defs>
+
+          <circle cx="210" cy="150" r="140" fill="url(#ringGlow)"/>
+          <circle class="orbit-ring orbit-ring--a" cx="210" cy="150" r="118" stroke="var(--line)" stroke-width="1" fill="none"/>
+          <circle class="orbit-ring orbit-ring--b" cx="210" cy="150" r="90" stroke="var(--line)" stroke-width="1" fill="none"/>
+
+          <path class="pulse-path" d="M10 150 H120 L138 100 L160 200 L182 60 L204 220 L226 150 H260
+            Q270 150 275 140 T290 130 Q300 130 305 140 T320 150 H410"
+            stroke="url(#pulseGrad)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+
+          <circle class="pulse-dot" r="5" fill="var(--teal-400)">
+            <animateMotion dur="4.5s" repeatCount="indefinite"
+              path="M10 150 H120 L138 100 L160 200 L182 60 L204 220 L226 150 H260
+              Q270 150 275 140 T290 130 Q300 130 305 140 T320 150 H410" />
+          </circle>
+
+          <g class="signal-dots">
+            <circle cx="80" cy="72" r="3" fill="var(--teal-500)"/>
+            <circle cx="330" cy="220" r="3" fill="var(--teal-500)"/>
+            <circle cx="352" cy="90" r="2.5" fill="var(--ink-400)"/>
+            <circle cx="60" cy="220" r="2.5" fill="var(--ink-400)"/>
+          </g>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ QUICK BENEFITS ============ -->
+  <section class="benefits">
+    <div class="benefits__inner">
+      <article class="benefit-card">
+        <div class="benefit-card__icon">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M10 2l2.2 4.6L17 7.3l-3.5 3.4.8 4.8L10 13.2l-4.3 2.3.8-4.8L3 7.3l4.8-.7L10 2z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg>
+        </div>
+        <h3>AI-Powered</h3>
+        <p>Machine-learning-based prediction.</p>
+      </article>
+      <article class="benefit-card">
+        <div class="benefit-card__icon">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M3 15V9m4.5 6V5m4.5 10v-4m4.5 4V7" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+        </div>
+        <h3>Lifestyle Analysis</h3>
+        <p>Analyze digital and daily lifestyle patterns.</p>
+      </article>
+      <article class="benefit-card">
+        <div class="benefit-card__icon">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="7" stroke="currentColor" stroke-width="1.4"/><path d="M10 6v4l2.6 2.6" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+        </div>
+        <h3>Personalized Result</h3>
+        <p>Receive a score based on your submitted information.</p>
+      </article>
+      <article class="benefit-card">
+        <div class="benefit-card__icon">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M4 6h12M4 10h12M4 14h7" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+        </div>
+        <h3>Simple Assessment</h3>
+        <p>Quick and easy questionnaire.</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- ============ ASSESSMENT ============ -->
+  <section class="assessment" id="assessment">
+    <div class="assessment__inner">
+
+      <div class="assessment__card" id="assessmentCard">
+        <div class="assessment__head">
+          <h2>Mental Health Assessment</h2>
+          <p>Tell us about yourself and your daily habits to generate your predicted score.</p>
+        </div>
+
+        <div class="assessment__error" id="serverError" role="alert" hidden></div>
+
+        <form id="assessmentForm" novalidate>
+
+          <!-- SECTION A -->
+          <fieldset class="form-section">
+            <legend>
+              <span class="form-section__index">01</span>
+              Personal Information
+            </legend>
+
+            <div class="form-grid">
+              <div class="field">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" placeholder="Enter your name" autocomplete="name" required />
+                <span class="field__error" id="err-name"></span>
+              </div>
+
+              <div class="field">
+                <label for="age">Age</label>
+                <input type="number" id="age" name="age" min="10" max="100" placeholder="e.g. 21" required />
+                <span class="field__error" id="err-age"></span>
+              </div>
+
+              <div class="field">
+                <label for="gender">Gender</label>
+                <select id="gender" name="gender" required>
+                  <option value="" disabled selected>Select gender</option>
+                  <option value="Male">Male</option>
+                  <option value="Female">Female</option>
+                </select>
+                <span class="field__error" id="err-gender"></span>
+              </div>
+
+              <div class="field">
+                <label for="country">Country</label>
+                <input type="text" id="country" name="country" list="countryList" placeholder="Start typing your country" autocomplete="off" required />
+                <datalist id="countryList"></datalist>
+                <span class="field__error" id="err-country"></span>
+              </div>
+            </div>
+          </fieldset>
+
+          <!-- SECTION B -->
+          <fieldset class="form-section">
+            <legend>
+              <span class="form-section__index">02</span>
+              Academic &amp; Digital Lifestyle
+            </legend>
+
+            <div class="form-grid">
+              <div class="field">
+                <label for="academic_level">Academic Level</label>
+                <select id="academic_level" name="academic_level" required>
+                  <option value="" disabled selected>Select level</option>
+                  <option value="Undergraduate">Undergraduate</option>
+                  <option value="Graduate">Graduate</option>
+                  <option value="High School">High School</option>
+                </select>
+                <span class="field__error" id="err-academic_level"></span>
+              </div>
+
+              <div class="field">
+                <label for="most_used_platform">Most Used Platform</label>
+                <select id="most_used_platform" name="most_used_platform" required>
+                  <option value="" disabled selected>Select platform</option>
+                  <option value="Facebook">Facebook</option>
+                  <option value="LinkedIn">LinkedIn</option>
+                  <option value="Instagram">Instagram</option>
+                  <option value="Snapchat">Snapchat</option>
+                  <option value="Twitter">Twitter</option>
+                  <option value="YouTube">YouTube</option>
+                  <option value="TikTok">TikTok</option>
+                  <option value="LINE">LINE</option>
+                  <option value="KakaoTalk">KakaoTalk</option>
+                  <option value="VKontakte">VKontakte</option>
+                  <option value="WhatsApp">WhatsApp</option>
+                  <option value="WeChat">WeChat</option>
+                </select>
+                <span class="field__error" id="err-most_used_platform"></span>
+              </div>
+
+              <div class="field">
+                <label for="purpose_of_use">Purpose of Use</label>
+                <select id="purpose_of_use" name="purpose_of_use" required>
+                  <option value="" disabled selected>Select purpose</option>
+                  <option value="Networking">Networking</option>
+                  <option value="Education">Education</option>
+                  <option value="Entertainment">Entertainment</option>
+                  <option value="News">News</option>
+                </select>
+                <span class="field__error" id="err-purpose_of_use"></span>
+              </div>
+
+              <div class="field">
+                <label for="avg_daily_usage_hours">Average Daily Usage (hours)</label>
+                <input type="number" id="avg_daily_usage_hours" name="avg_daily_usage_hours" min="0" max="24" step="0.1" placeholder="e.g. 5.5" required />
+                <span class="field__error" id="err-avg_daily_usage_hours"></span>
+              </div>
+
+              <div class="field">
+                <label for="daily_unlocks">Daily Unlocks</label>
+                <input type="number" id="daily_unlocks" name="daily_unlocks" min="0" step="1" placeholder="e.g. 80" required />
+                <span class="field__error" id="err-daily_unlocks"></span>
+              </div>
+            </div>
+          </fieldset>
+
+          <!-- SECTION C -->
+          <fieldset class="form-section">
+            <legend>
+              <span class="form-section__index">03</span>
+              Lifestyle
+            </legend>
+
+            <div class="form-grid">
+              <div class="field">
+                <label for="study_hours">Study Hours (per day)</label>
+                <input type="number" id="study_hours" name="study_hours" min="0" max="24" step="0.1" placeholder="e.g. 3" required />
+                <span class="field__error" id="err-study_hours"></span>
+              </div>
+
+              <div class="field">
+                <label for="physical_activity_hours">Physical Activity Hours</label>
+                <input type="number" id="physical_activity_hours" name="physical_activity_hours" min="0" max="24" step="0.1" placeholder="e.g. 1" required />
+                <span class="field__error" id="err-physical_activity_hours"></span>
+              </div>
+
+              <div class="field">
+                <label for="sleep_hours_per_night">Sleep Hours Per Night</label>
+                <input type="number" id="sleep_hours_per_night" name="sleep_hours_per_night" min="0" max="24" step="0.1" placeholder="e.g. 7" required />
+                <span class="field__error" id="err-sleep_hours_per_night"></span>
+              </div>
+
+              <div class="field">
+                <label for="stress_level">Stress Level</label>
+                <select id="stress_level" name="stress_level" required>
+                  <option value="" disabled selected>Select stress level</option>
+                  <option value="Low">Low</option>
+                  <option value="Medium">Medium</option>
+                  <option value="High">High</option>
+                  <option value="Very High">Very High</option>
+                </select>
+                <span class="field__error" id="err-stress_level"></span>
+              </div>
+            </div>
+          </fieldset>
+
+          <button type="submit" class="btn btn--primary btn--block" id="submitBtn">
+            <span class="btn__label">Calculate My Mental Health Score</span>
+            <span class="btn__spinner" aria-hidden="true"></span>
+          </button>
+        </form>
+      </div>
+
+      <!-- ============ RESULT ============ -->
+      <div class="result" id="resultSection" hidden>
+        <div class="result__card">
+          <p class="result__tag">Assessment Complete</p>
+          <h2 class="result__hello">Hello, <span id="resultName">—</span></h2>
+
+          <div class="result__gauge-wrap">
+            <svg class="gauge" viewBox="0 0 220 220" width="220" height="220">
+              <defs>
+                <linearGradient id="gaugeGrad" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0%" stop-color="var(--teal-300)"/>
+                  <stop offset="100%" stop-color="var(--teal-600)"/>
+                </linearGradient>
+              </defs>
+              <circle class="gauge__track" cx="110" cy="110" r="94" fill="none" stroke-width="14"/>
+              <circle class="gauge__fill" id="gaugeFill" cx="110" cy="110" r="94" fill="none" stroke-width="14" stroke-linecap="round" transform="rotate(-90 110 110)"/>
+            </svg>
+            <div class="result__score-inner">
+              <span class="result__score" id="resultScore">0</span>
+              <span class="result__score-label">Predicted Score</span>
+            </div>
+          </div>
+
+          <p class="result__caption">This score was generated using the information you provided and the application's machine-learning model.</p>
+          <button class="btn btn--ghost" id="retakeBtn">Take Assessment Again</button>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============ ABOUT ============ -->
+  <section class="about" id="about">
+    <div class="about__inner">
+      <h2>About MentalCare AI</h2>
+      <p>This application uses machine learning to generate a predicted mental health score based on the lifestyle and digital behavior information provided by the user.</p>
+      <div class="about__disclaimer">
+        <strong>Disclaimer:</strong> This application is intended for educational and informational purposes only. The predicted score is not a medical diagnosis and should not replace professional mental-health advice.
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="footer">
+  <div class="footer__inner">
+    <div>
+      <p class="footer__brand">MentalCare AI</p>
+      <p class="footer__tag">AI-Powered Mental Health Score Assessment</p>
+    </div>
+    <p class="footer__copy">© 2026 MentalCare AI</p>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
