@@ -4,7 +4,8 @@ from fastapi import FastAPI
 from pydantic import BaseModel,Field
 from typing import Literal
 from fastapi.middleware.cors import CORSMiddleware
-
+import csv
+from datetime import datetime
 model = joblib.load('Mental_Health_Model.pkl')
 top_countries = ['Other','India','USA','Canada','Australia','UK','Germany','Mexico','Turkey','France'] 
 
@@ -72,7 +73,21 @@ def predict(data: StudentData):
 
 
     prediction = model.predict(input_row)[0]
+    final_score = round(float(prediction), 2)
+    
+    # 1. Print to console (so you can see it live in your Render dashboard logs)
+    print(f"✅ New Prediction -> Name: {data.name} | Score: {final_score}", flush=True)
+    
+    # 2. Save to a CSV file
+    try:
+        with open("user_scores.csv", mode="a", newline="", encoding="utf-8") as file:
+            writer = csv.writer(file)
+            # Writing: Date, Time, Name, Score
+            writer.writerow([datetime.now().strftime("%Y-%m-%d %H:%M:%S"), data.name, final_score])
+    except Exception as e:
+        print(f"Error saving to CSV: {e}")
+
     return PredictionResponse(
         name=data.name,
-        predicted_mental_health_score=round(float(prediction),2)
-        )
+        predicted_mental_health_score=final_score
+    )
