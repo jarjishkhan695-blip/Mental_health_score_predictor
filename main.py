@@ -21,6 +21,7 @@ app.add_middleware(
 
 #First pydantic model
 class StudentData(BaseModel):
+    name                    : str = Field(..., min_length=1)
     age                     : int = Field(..., ge =10 , le=100)
     gender                  : Literal['Male','Female']
     country                 : str
@@ -40,13 +41,12 @@ class StudentData(BaseModel):
 
 #Describe what we send back
 class PredictionResponse(BaseModel):
+    name: str
     predicted_mental_health_score:float
 
 @app.get('/')
 def greet():
     return {'message': 'Welcome to Mental Score Predictor'}
-
-top_countries = ['Other','India','USA','Canada','Australia','UK','Germany','Mexico','Turkey','France']
 
 
 @app.post('/predict' , response_model=PredictionResponse)
@@ -72,4 +72,7 @@ def predict(data: StudentData):
 
 
     prediction = model.predict(input_row)[0]
-    return PredictionResponse(predicted_mental_health_score=round(float(prediction),2))
+    return PredictionResponse(
+        name=data.name,
+        predicted_mental_health_score=round(float(prediction),2)
+        )
