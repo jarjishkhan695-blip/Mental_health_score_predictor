@@ -5,7 +5,7 @@
    ========================================================================== */
 const API_URL = 'https://mental-health-score-predictor-1-uma2.onrender.com/predict';
 const GAUGE_CIRCUMFERENCE = 2 * Math.PI * 94; // r=94, matches SVG
-const MAX_SCORE_FOR_GAUGE = 100; // score assumed on a 0–100 scale for the visual ring
+const MAX_SCORE_FOR_GAUGE = 10; // score assumed on a 0–10 scale for the visual ring
 
 const COUNTRIES = [
   'India', 'United States', 'United Kingdom', 'Canada', 'Australia', 'Germany',
@@ -51,9 +51,18 @@ function init() {
 }
 
 function populateCountryList() {
-  countryList.innerHTML = COUNTRIES
-    .map((c) => `<option value="${c}"></option>`)
-    .join('');
+  const countryInput = document.getElementById('country');
+  countryInput.addEventListener('input', () => {
+    const val = countryInput.value.toLowerCase();
+    if (val.length === 0) {
+      countryList.innerHTML = '';
+      return;
+    }
+    const filtered = COUNTRIES.filter(c => c.toLowerCase().startsWith(val));
+    countryList.innerHTML = filtered
+      .map((c) => `<option value="${c}"></option>`)
+      .join('');
+  });
 }
 
 function bindNavigation() {
@@ -146,6 +155,17 @@ function validateForm() {
       clearFieldError(id);
     }
   });
+
+  if (isValid) {
+    const study = Number(document.getElementById('study_hours').value) || 0;
+    const physical = Number(document.getElementById('physical_activity_hours').value) || 0;
+    const sleep = Number(document.getElementById('sleep_hours_per_night').value) || 0;
+    if (study + physical + sleep > 24) {
+      setFieldError('sleep_hours_per_night', 'Total study, physical, and sleep hours cannot exceed 24.');
+      isValid = false;
+    }
+  }
+
   return isValid;
 }
 
