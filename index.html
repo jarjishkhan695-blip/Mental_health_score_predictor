@@ -39,7 +39,6 @@
 
   <!-- ============ HERO ============ -->
   <section class="hero">
-    <div class="hero__glow" aria-hidden="true"></div>
     <div class="hero__inner">
       <div class="hero__content">
         <p class="hero__eyebrow">Predictive wellness, powered by machine learning</p>
@@ -51,43 +50,6 @@
             <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </button>
         </div>
-      </div>
-
-      <div class="hero__visual" aria-hidden="true">
-        <svg class="pulse-signal" viewBox="0 0 420 300" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <defs>
-            <linearGradient id="pulseGrad" x1="0" y1="0" x2="420" y2="0" gradientUnits="userSpaceOnUse">
-              <stop offset="0" stop-color="var(--teal-400)"/>
-              <stop offset="0.55" stop-color="var(--teal-600)"/>
-              <stop offset="1" stop-color="var(--ink-700)"/>
-            </linearGradient>
-            <radialGradient id="ringGlow" cx="0.5" cy="0.5" r="0.5">
-              <stop offset="0%" stop-color="var(--teal-300)" stop-opacity="0.35"/>
-              <stop offset="100%" stop-color="var(--teal-300)" stop-opacity="0"/>
-            </radialGradient>
-          </defs>
-
-          <circle cx="210" cy="150" r="140" fill="url(#ringGlow)"/>
-          <circle class="orbit-ring orbit-ring--a" cx="210" cy="150" r="118" stroke="var(--line)" stroke-width="1" fill="none"/>
-          <circle class="orbit-ring orbit-ring--b" cx="210" cy="150" r="90" stroke="var(--line)" stroke-width="1" fill="none"/>
-
-          <path class="pulse-path" d="M10 150 H120 L138 100 L160 200 L182 60 L204 220 L226 150 H260
-            Q270 150 275 140 T290 130 Q300 130 305 140 T320 150 H410"
-            stroke="url(#pulseGrad)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-
-          <circle class="pulse-dot" r="5" fill="var(--teal-400)">
-            <animateMotion dur="4.5s" repeatCount="indefinite"
-              path="M10 150 H120 L138 100 L160 200 L182 60 L204 220 L226 150 H260
-              Q270 150 275 140 T290 130 Q300 130 305 140 T320 150 H410" />
-          </circle>
-
-          <g class="signal-dots">
-            <circle cx="80" cy="72" r="3" fill="var(--teal-500)"/>
-            <circle cx="330" cy="220" r="3" fill="var(--teal-500)"/>
-            <circle cx="352" cy="90" r="2.5" fill="var(--ink-400)"/>
-            <circle cx="60" cy="220" r="2.5" fill="var(--ink-400)"/>
-          </g>
-        </svg>
       </div>
     </div>
   </section>
@@ -299,12 +261,6 @@
 
           <div class="result__gauge-wrap">
             <svg class="gauge" viewBox="0 0 220 220" width="220" height="220">
-              <defs>
-                <linearGradient id="gaugeGrad" x1="0" y1="0" x2="1" y2="1">
-                  <stop offset="0%" stop-color="var(--teal-300)"/>
-                  <stop offset="100%" stop-color="var(--teal-600)"/>
-                </linearGradient>
-              </defs>
               <circle class="gauge__track" cx="110" cy="110" r="94" fill="none" stroke-width="14"/>
               <circle class="gauge__fill" id="gaugeFill" cx="110" cy="110" r="94" fill="none" stroke-width="14" stroke-linecap="round" transform="rotate(-90 110 110)"/>
             </svg>
